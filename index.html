@@ -343,7 +343,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Pohon Adopsi Hutan Adat Petapahan<br />Kelas Diameter<br /><table><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_044cm0.png" /></td><td>0 - 44 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_4454cm1.png" /></td><td>44 - 54 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_54296cm2.png" /></td><td>54 - 296 cm</td></tr></table>': cluster_PohonAdopsi_3,'<img src="legend/HutanAdatPetapahan_2.png" /> Hutan Adat Petapahan': layer_HutanAdatPetapahan_2,"Google Satellite": layer_GoogleSatellite_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'Pohon Adopsi Hutan Adat Petapahan<br />Kelas Diameter<br /><table><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_044cm0.png" /></td><td>0 - 44 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_4454cm1.png" /></td><td>44 - 54 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_54296cm2.png" /></td><td>54 - 296 cm</td></tr></table>': cluster_PohonAdopsi_3,'<img src="legend/HutanAdatPetapahan_2.png" /> Hutan Adat Petapahan': layer_HutanAdatPetapahan_2,"Peta Dasar (Google Satellite)": layer_GoogleSatellite_1,"Peta Dasar (OSM Standard)": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
             layer: cluster_PohonAdopsi_3,
