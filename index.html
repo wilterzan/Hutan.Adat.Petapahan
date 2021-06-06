@@ -21,7 +21,7 @@
             margin: 0;
         }
         .leaflet-popup-content > table img {
-            width: 200px;
+            width: 250px;
         }
         </style>
         <title></title>
@@ -63,7 +63,7 @@
         document.getElementsByClassName('leaflet-control-measure-toggle')[0]
         .innerHTML = '';
         document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-        .className += ' fas fa-ruler';
+        .className += ' fas fa-ruler-horizontal';
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
             if (bounds_group.getLayers().length) {
@@ -196,10 +196,6 @@
                         <td>' + (feature.properties['tipe_pohon'] !== null ? autolinker.link(feature.properties['tipe_pohon'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Penyedia Bibit</th>\
-                        <td>' + (feature.properties['penyedia_b'] !== null ? autolinker.link(feature.properties['penyedia_b'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">Status Pohon (IUCN)</th>\
                         <td>' + (feature.properties['status_iuc'] !== null ? autolinker.link(feature.properties['status_iuc'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -210,6 +206,14 @@
                     <tr>\
                         <th scope="row">Tinggi (m)</th>\
                         <td>' + (feature.properties['tinggi'] !== null ? autolinker.link(feature.properties['tinggi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Latitude</th>\
+                        <td>' + (feature.properties['latitude'] !== null ? autolinker.link(feature.properties['latitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Longitude</th>\
+                        <td>' + (feature.properties['longitude'] !== null ? autolinker.link(feature.properties['longitude'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Jarak ke Permukiman (km)</th>\
@@ -232,7 +236,7 @@
                         <td>' + (feature.properties['metode_kar'] !== null ? autolinker.link(feature.properties['metode_kar'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Harga Adopsi</th>\
+                        <th scope="row">Harga Adopsi (Rp)</th>\
                         <td>' + (feature.properties[' harga_ado'] !== null ? autolinker.link(feature.properties[' harga_ado'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -251,7 +255,7 @@
                         <td colspan="2"><strong>Foto</strong><br />' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, {maxHeight: 350});
         }
 
         function style_PohonAdopsi_3_0(feature) {
@@ -339,7 +343,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Pohon Adopsi Hutan Adat Petapahan<br />Kelas Diameter<br /><table><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_044cm0.png" /></td><td>0 - 44 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_4454cm1.png" /></td><td>44 - 54 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_54296cm2.png" /></td><td>54 - 296 cm</td></tr></table>': cluster_PohonAdopsi_3,'<img src="legend/HutanAdatPetapahan_2.png" /> Hutan Adat Petapahan': layer_HutanAdatPetapahan_2,"Google Satellite": layer_GoogleSatellite_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'Pohon Adopsi Hutan Adat Petapahan<br />Kelas Diameter<br /><table><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_044cm0.png" /></td><td>0 - 44 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_4454cm1.png" /></td><td>44 - 54 cm</td></tr><tr><td style="text-align: center;"><img src="legend/PohonAdopsi_3_54296cm2.png" /></td><td>54 - 296 cm</td></tr></table>': cluster_PohonAdopsi_3,'<img src="legend/HutanAdatPetapahan_2.png" /> Hutan Adat Petapahan': layer_HutanAdatPetapahan_2,"Peta Dasar (Google Satellite)": layer_GoogleSatellite_1,"Peta Dasar (OSM Standard)": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
             layer: cluster_PohonAdopsi_3,
