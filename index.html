@@ -196,10 +196,6 @@
                         <td>' + (feature.properties['tipe_pohon'] !== null ? autolinker.link(feature.properties['tipe_pohon'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Penyedia Bibit</th>\
-                        <td>' + (feature.properties['penyedia_b'] !== null ? autolinker.link(feature.properties['penyedia_b'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">Status Pohon (IUCN)</th>\
                         <td>' + (feature.properties['status_iuc'] !== null ? autolinker.link(feature.properties['status_iuc'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -210,6 +206,14 @@
                     <tr>\
                         <th scope="row">Tinggi (m)</th>\
                         <td>' + (feature.properties['tinggi'] !== null ? autolinker.link(feature.properties['tinggi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Latitude</th>\
+                        <td>' + (feature.properties['latitude'] !== null ? autolinker.link(feature.properties['latitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Longitude</th>\
+                        <td>' + (feature.properties['longitude'] !== null ? autolinker.link(feature.properties['longitude'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Jarak ke Permukiman (km)</th>\
